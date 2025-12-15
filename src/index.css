@@ -851,8 +851,14 @@
 }
 
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
   body {
-    background-color: var(--color-white);
+    background-color: var(--color-white) !important;
   }
 
   .print\:hidden {
@@ -863,8 +869,110 @@
     box-shadow: none !important;
   }
 
+  /* Remove gray background and padding from outer containers */
+  .min-h-screen {
+    background-color: var(--color-white) !important;
+    min-height: auto !important;
+  }
+
+  .bg-gray-100,
+  .bg-gray-900 {
+    background-color: var(--color-white) !important;
+  }
+
+  .p-8 {
+    padding: 0 !important;
+  }
+
+  .mx-auto {
+    margin: 0 !important;
+  }
+
+  /* Force background colors to show */
+  .bg-gray-800,
+  #ResumeHeaderContainer {
+    background-color: var(--color-gray-800) !important;
+  }
+
+  .bg-gray-875 {
+    background-color: var(--color-gray-875) !important;
+  }
+
+  /* Remove page margins and headers/footers */
   @page {
-    margin: 1cm;
+    margin: 0 !important;
+    size: A4;
+  }
+
+  /* Optimize layout for print */
+  .max-w-4xl {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Remove transitions and animations */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Prevent elements from breaking across pages */
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .space-y-10 > * {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Ensure sections stay together */
+  section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Add page breaks before major sections if needed */
+  .space-y-10 > *:not(:first-child) {
+    page-break-before: auto !important;
+    break-before: auto !important;
+  }
+
+  /* Preserve grid layouts for print */
+  .grid.md\:grid-cols-2,
+  .grid[class*="md:grid-cols-2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Fix component order for print - based on unique IDs */
+  .space-y-10 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  #about-section {
+    order: 1 !important; /* AboutSection */
+  }
+
+  #experience-section {
+    order: 2 !important; /* ExperienceSection */
+  }
+
+  #projects-section {
+    order: 3 !important; /* ProjectsSection */
+  }
+
+  #skills-section {
+    order: 4 !important; /* SkillsSection */
+  }
+
+  #education-section {
+    order: 5 !important; /* EducationSection */
   }
 }
 

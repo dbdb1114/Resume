@@ -43,12 +43,13 @@ const certifications: Certification[] = [
 export function EducationSection() {
   return (
     <motion.section
+      id="education-section"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
     >
-      <h2 className="text-xl mb-4 pb-2 border-b-2 border-gray-900 dark:border-gray-300 dark:text-gray-300 uppercase tracking-wider">학력 및 자격증</h2>
+      <h2 className="text-xl mb-4 pb-2 border-b-2 border-gray-900 dark:border-gray-300 dark:text-gray-300 uppercase tracking-wider">교육 과정 및 자격증</h2>
       
       <div className="grid md:grid-cols-2 gap-8">
         {/* 왼쪽: 교육 과정 */}

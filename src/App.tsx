@@ -70,15 +70,15 @@ export default function App() {
           
           <div className="p-10 space-y-10">
             <AboutSection />
-            <ExperienceSection />
             <SkillsSection />
-            <ProjectsSection />
             <EducationSection />
+            <ExperienceSection />
+            <ProjectsSection />
             {/* <ContactSection /> */}
           </div>
         </motion.div>
         
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
@@ -88,15 +88,9 @@ export default function App() {
             onClick={() => window.print()}
             className="px-6 py-2 bg-gray-900 dark:bg-gray-700 text-white hover:bg-gray-800 dark:hover:bg-gray-600 transition-colors print:hidden"
           >
-            이력서 출력하기
+            이력서 출력
           </button>
-          <button
-            onClick={()=>handlePrint()}
-            className="px-6 py-2 bg-blue-600 dark:bg-blue-700 text-white hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors print:hidden"
-          >
-            PDF 다운로드
-          </button>
-        </motion.div> */}
+        </motion.div>
       </div>
     </div>
   );

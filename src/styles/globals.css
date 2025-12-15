@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@theme {
+  --color-gray-875: #1a2332;
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white;
+  }
+  
+  .print\:hidden {
+    display: none !important;
+  }
+  
+  .shadow-md {
+    box-shadow: none !important;
+  }
+  
+  @page {
+    margin: 1cm;
+  }
+}

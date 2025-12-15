@@ -53,7 +53,7 @@
       target: 'esnext',
       outDir: 'dist',
     },
-    base: '/Resume2/',
+    base: '/Resume/',
     server: {
       port: 3000,
       open: true,

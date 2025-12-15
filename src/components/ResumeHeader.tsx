@@ -8,7 +8,7 @@ export function ResumeHeader() {
         {/* Profile Photo */}
         <div className="flex-shrink-0">
           <ImageWithFallback
-            src="/my_image.png"
+            src="https://github.com/dbdb1114/Resume/blob/main/public/my_image.png?raw=true"
             alt="Profile"
             className="w-32 h-32 rounded-full object-cover border-4 border-gray-700"
           />

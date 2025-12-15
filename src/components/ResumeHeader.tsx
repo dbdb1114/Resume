@@ -7,8 +7,8 @@ export function ResumeHeader() {
       <div className="flex flex-row gap-6 items-center">
         {/* Profile Photo */}
         <div className="flex-shrink-0">
-          <ImageWithFallback 
-            src="src/img/my_image.png"
+          <ImageWithFallback
+            src="/my_image.png"
             alt="Profile"
             className="w-32 h-32 rounded-full object-cover border-4 border-gray-700"
           />

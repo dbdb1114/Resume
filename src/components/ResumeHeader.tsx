@@ -1,4 +1,4 @@
-import { Mail, Github, Phone, MapPin } from 'lucide-react';
+import { Mail, Github, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function ResumeHeader() {
@@ -27,16 +27,20 @@ export function ResumeHeader() {
             </a>
             <a href="https://github.com/dbdb1114" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
               <Github size={16} />
-              https://github.com/dbdb1114
+              GitHub
             </a>
-             <a href="tel:010-1234-5678" className="flex items-center gap-2 hover:text-white transition-colors">
-              <Phone size={16} />
-              010-5421-5350
+            <a href="https://dbdb1114.github.io/portpolio" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+              <ExternalLink size={16} />
+              Portfolio
             </a>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
               경기도 성남시 중원구 하대원동, 대한민국
             </div>
+             <a href="tel:010-1234-5678" className="flex items-center gap-2 hover:text-white transition-colors">
+              <Phone size={16} />
+              010-5421-5350
+            </a>
           </div>
         </div>
       </div>

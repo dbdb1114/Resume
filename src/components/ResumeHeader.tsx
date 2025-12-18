@@ -17,7 +17,7 @@ export function ResumeHeader() {
         {/* Name and Title */}
         <div className="flex-1">
           <h1 className="text-3xl mb-2 tracking-wide">유정현</h1>
-          <p className="text-lg text-gray-300 mb-6">백엔드 개발자</p>
+          <p className="text-lg text-gray-300 mb-6">웹 개발자</p>
           
           {/* Contact Info */}
           <div id='header-info' className="flex flex-wrap gap-4 text-sm text-gray-300">
@@ -35,7 +35,7 @@ export function ResumeHeader() {
             </a>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
-              경기도 성남, 대한민국
+              경기도 성남시 중원구 하대원동, 대한민국
             </div>
           </div>
         </div>

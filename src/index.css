@@ -960,19 +960,21 @@
   }
 
   #experience-section {
-    order: 2 !important; /* ExperienceSection */
+    order: 4 !important; /* ExperienceSection */
+    margin-top: 100px !important;
   }
 
   #projects-section {
-    order: 3 !important; /* ProjectsSection */
+    order: 5 !important; /* ProjectsSection */
+    margin-top: 300px !important;
   }
 
   #skills-section {
-    order: 4 !important; /* SkillsSection */
+    order: 2 !important; /* SkillsSection */
   }
 
   #education-section {
-    order: 5 !important; /* EducationSection */
+    order: 3 !important; /* EducationSection */
   }
 }
 

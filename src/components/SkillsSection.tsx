@@ -8,7 +8,7 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     category: '프론트엔드',
-    skills: ['Markup', 'Tailwind CSS', 'React', 'React Query']
+    skills: ['Next','React', 'Markup','Recoil', 'Tailwind CSS', 'React Query']
   },
   {
     category: '백엔드',

@@ -28,9 +28,9 @@ const courses: Course[] = [
 
 const certifications: Certification[] = [
   {
-    name: '정보처리산업기사',
+    name: '정보처리기사',
     issuer: '한국산업인력공단',
-    date: '2024.10'
+    date: '2025.12'
   },
   {
     name: '컴퓨터 활용능력 2급',

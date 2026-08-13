@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { ExternalLink } from "lucide-react";
 
 interface MainTask {
   title: string;
@@ -7,39 +8,80 @@ interface MainTask {
 
 interface Project {
   title: string;
-  role: string;
+  subtitle?: string;
+  role?: string;
   mainTasks: MainTask[];
   tech: string[];
+  link?: string;
 }
 
 const projects: Project[] = [
   {
-    "title": "한국사 능력 검정 시험 학습 서비스",
+    "title": "스마트 글래스 관리 및 다자간 영상통화 웹 시스템 (주식회사 와트, 재직 중)",
+    "subtitle": "Nuxt2 기반 관리 웹에 React 앱을 iframe으로 삽입하는 구조의 스마트 글래스 관리 시스템 + Nuxt2/Nuxt4 기반 다자간 영상통화 시스템",
     "role": "SW개발 > 웹 개발",
     "mainTasks": [
       {
-        "title": "사용자 페이지 화면 구현",
+        "title": "레포·브랜치 구조 통합",
         "details": [
-          "기출문제 유형 선택부터 문제 풀이 페이지까지 사용자 플로우 전반의 화면 구현",
-          "UI/UX 사용성 향상을 고려한 페이지 이동 구조 및 화면 흐름 설계"
+          "스마트 글래스 비즈니스 로직이 분산되어 있던 React 레포 2개를 1개로 통합",
+          "고객사·제품별(코오롱, 도로공사, 미트) 분기 브랜치를 통합 브랜치 체계로 재편(기존 수렴 브랜치 부재), EnterpriseConfig 기반 설정 분기로 전환",
+          "배포용으로만 쓰이던 불필요 레포를 제거해 단일 레포 배포 구조로 단순화"
         ]
       },
       {
-        "title": "관리자 페이지 화면 구현",
+        "title": "관리 웹(Nuxt) SPA 전환 및 디자인 개편",
         "details": [
-          "TanStack Query를 활용한 API 캐싱 전략 적용으로 불필요한 API 요청 최소화",
-          "문제 관리 기능을 위한 CRUD 페이지 구조 설계 및 화면 구현",
-          "간단 퀴즈 관리 기능에 대한 CRUD 페이지 설계 및 구현",
-          "문제 등록 전 미리보기 렌더링 기능을 제공하여 관리자 UX 개선"
+          "URL 기반 풀 페이지 라우팅 구조를 SPA로 전환하고 개편 디자인 적용, 배포 계획 수립·실행"
+        ]
+      },
+      {
+        "title": "WebRTC TURN 인증 개선",
+        "details": [
+          "하드코딩 장기 자격증명의 보안 문제를 제기하고 HMAC 기반 임시 자격증명(RFC 7635) 전환을 설계·주도",
+          "프론트(RTCPeerConnection) 임시 자격증명 연동 직접 구현"
+        ]
+      },
+      {
+        "title": "신규 기능 개발 및 오너십",
+        "details": [
+          "Google OTP 2차 인증 연계 — 유저 플로우 설계, 사용 정책 수립 주도, 기능 매뉴얼 작성",
+          "웹 설문지 시스템 — 유저 플로우 설계부터 구현·매뉴얼·사내(영업부) 기능 공유까지 담당",
+          "고객사 UI/UX 개선 요청을 1주 내 수정·배포, 고객 문의 원인 분석·대응(사용자 이슈/시스템 이슈 판별)",
+          "다국어(i18n) 지원 — Nuxt 관리 웹·React 앱에 한국어·영어·스페인어 적용",
+          "LLM 기반 위험 요소 체크리스트 페이지 프론트엔드 구현"
+        ]
+      },
+      {
+        "title": "레거시 개선 및 빌드·배포 안정화",
+        "details": [
+          "2~3천 줄 규모 레거시 비즈니스 로직 파일 점진적 분해·모듈화",
+          "Jenkins 빌드 OOM — 프로세스 트리 메모리 측정으로 병목 특정, webpack 병렬 워커 튜닝으로 피크 메모리 약 42% 절감 및 빌드 시간 단축",
+          "npm 개발 서버로 운영되던 프론트엔드 배포를 Nginx 정적 리소스 서빙으로 전환"
+        ]
+      },
+      {
+        "title": "AI 활용 개발 체계 구축",
+        "details": [
+          "머지 후 검증, CSS 사이드이펙트 분석, 레거시 기능 스캔 등 반복 작업을 Claude Code 스킬·프로토콜로 정형화해 클라이언트 프로젝트 전반에 공통 적용",
+          "브랜치별 분석 문서 체계로 대규모 레거시 분석 컨텍스트 관리, 의존성 그래프 추출(ts-morph)로 분석 범위 최소화"
+        ]
+      },
+      {
+        "title": "보안 취약점 개선",
+        "details": [
+          "백엔드 로그 분석 중 인증번호가 브라우저 단에 노출되는 취약점 발견 — 노출 경로 특정 후 조치 및 재발 검증",
+          "고객사별 보안 강화 — 민감 정보 로깅 제거, IP 하드코딩 제거, 파일 업로드 검증 개선 (현대·한전)"
         ]
       }
     ],
     "tech": [
       "React",
-      "Next",
-      "TanStackQuery",
-      "Spring Boot",
-      "MySQL"
+      "Nuxt",
+      "Vue",
+      "WebRTC",
+      "Nginx",
+      "webpack"
     ]
   },
   {
@@ -79,12 +121,12 @@ const projects: Project[] = [
       }
     ],
     "tech": [
-      "Markup",
-      "VanillaJS",
+      "HTML/CSS",
+      "Vanilla JS",
       "Java",
       "Spring",
-      "MyBatis(Interceptor)",
-      "PostgreSQL(information_schema)"
+      "MyBatis",
+      "PostgreSQL"
     ]
   },
   {
@@ -92,24 +134,16 @@ const projects: Project[] = [
     "role": "SW개발 > 웹 개발자 인턴",
     "mainTasks": [
       {
-        "title": "레거시 애플리케이션 기능 모듈 확장 및 표준화",
+        "title": "레거시 모듈 표준화 및 DB 이관",
         "details": [
-          "애플리케이션 공통 라이브러리 교체 작업 수행",
-          "공통 코드 구조를 설계·구현하여 화면별 커스터마이징 부담을 줄이고 유지보수성 개선",
-          "인증·세션 기반 접근 제어 모듈을 도입해 동시 로그인 케이스를 정책적으로 관리"
-        ]
-      },
-      {
-        "title": "DB 이관 지원(Oracle → MariaDB)",
-        "details": [
-          "Oracle에서 MariaDB로의 데이터베이스 이관 작업 지원",
-          "이관 과정에서 애플리케이션 영향 범위 점검 및 데이터 검증 수행"
+          "공통 코드 구조 설계·구현으로 화면별 커스터마이징 부담 절감, 인증·세션 기반 접근 제어 모듈로 동시 로그인 정책 관리",
+          "Oracle → MariaDB 이관 지원 — 애플리케이션 영향 범위 점검 및 데이터 검증"
         ]
       }
     ],
     "tech": [
-      "Markup",
-      "VanillaJS",
+      "HTML/CSS",
+      "Vanilla JS",
       "Spring",
       "jQuery",
       "Oracle",
@@ -117,13 +151,13 @@ const projects: Project[] = [
     ]
   },
   {
-    "title": "FEMS 공장 데이터 시각화 웹 시스템",
-    "role": "SW개발 > 백엔드/프론트엔드(풀스택)",
+    "title": "FEMS 공장 데이터 시각화 웹 시스템 (외주 개발, 2인 팀)",
+    "role": "SW개발 > 풀스택 — 백엔드 전담 및 화면단 80% 담당",
     "mainTasks": [
       {
         "title": "실시간 에너지 사용량 시각화 구현 및 페이지 로딩 성능 개선",
         "details": [
-          "Chart.js 기반 데이터 시각화 화면 개발의 80% 이상을 담당",
+          "Chart.js 기반 실시간·누적 에너지 데이터 시각화 화면 구현",
           "실시간·누적 데이터 조회 결과를 차트 컴포넌트로 구성해 가독성과 모니터링 편의성 강화",
           "캐싱 전략을 적용해 페이지 재진입 시 로딩 속도를 개선하여 사용자 경험 향상"
         ]
@@ -141,18 +175,51 @@ const projects: Project[] = [
           "동시 연산 요청 시 발생하는 DB 서버 다운 이슈를 재현하고 병목 구간 분석",
           "쿼리·함수 사용 방식과 데이터 처리량을 기준으로 테스트하여 안정적인 처리 기준 도출",
           "일부 DB 연산을 애플리케이션 처리로 전환해 부하 분산",
-          "응답 속도 2~3초 → 약 1초 수준으로 개선"
+          "통계 쿼리 응답 속도 2~3초 → 약 1초 수준으로 개선"
         ]
       }
     ],
     "tech": [
-      "VanillaJS",
-      "ChartJS",
-      "Markup",
+      "Vanilla JS",
+      "Chart.js",
+      "HTML/CSS",
       "Thymeleaf",
       "Java",
       "Spring Boot"
     ]
+  },
+  {
+    "title": "한정판매 시스템",
+    "subtitle": "특정 시간 오픈되는 선착순 판매 서비스 (항해99 취업 리부트 과정 산출물)",
+    "mainTasks": [
+      {
+        "title": "요구사항 변화에 따라 Monolithic → MSA 전환",
+        "details": [
+          "Spring Cloud Config로 공통 설정 중앙화, AMQP 기반 Spring Cloud Bus로 설정 반영 자동화",
+          "Docker Compose 기반 서비스 컨테이너화 및 서비스 간 통신 구성"
+        ]
+      },
+      {
+        "title": "대용량 트래픽 대응 및 성능 최적화",
+        "details": [
+          "대용량 트래픽 대응을 위해 재고 관리 API를 MVC → WebFlux 전환",
+          "재고 API Redis 동시성 문제 해결 — 100건 이상 동시 요청 시 NPE 발생을 병렬 테스트로 동시성 이슈로 특정, Redisson 분산락 도입으로 부하 테스트에서 재현되던 동시성 에러 완전 제거",
+          "상품 목록·상세 조회 성능 개선 — Blocking I/O + DB 부하로 최대 6초 지연 → Redis 캐시 도입으로 평균 700ms, TPS 155.7 → 423 (nGrinder 측정)"
+        ]
+      }
+    ],
+    "tech": [
+      "Spring Boot",
+      "Spring WebFlux",
+      "Spring Cloud",
+      "JPA",
+      "MySQL",
+      "Redis",
+      "Docker",
+      "nGrinder",
+      "Scouter"
+    ],
+    "link": "https://azure-attention-c2e.notion.site/8c199ca32cb642618dd33a2cf20ff5f7?pvs=4"
   }
 ];
 
@@ -182,15 +249,23 @@ export function ProjectsSection() {
             }}
             className="dark:bg-gray-700 p-5 bg-gray-50 dark:bg-gray-750 border border-gray-200 dark:border-gray-700 cursor-default"
           >
-            <h3 className="text-lg text-gray-900 dark:text-gray-100 mb-3">
+            <h3 className="text-lg text-gray-900 dark:text-gray-100 mb-1">
               {project.title}
             </h3>
 
-            <div className="mb-3">
-              <p className="text-sm text-gray-700 dark:text-gray-300">
-                <span className="font-semibold">담당업무:</span> {project.role}
+            {project.subtitle && (
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                {project.subtitle}
               </p>
-            </div>
+            )}
+
+            {project.role && (
+              <div className="mb-3">
+                <p className="text-sm text-gray-700 dark:text-gray-300">
+                  <span className="font-semibold">담당업무:</span> {project.role}
+                </p>
+              </div>
+            )}
 
             {project.mainTasks.map((mainTask, i) => (
               <div key={i} className="mb-3">
@@ -222,6 +297,18 @@ export function ProjectsSection() {
                 </span>
               ))}
             </div>
+
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 mt-3 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+              >
+                <ExternalLink size={14} />
+                상세 기록 보기
+              </a>
+            )}
           </motion.div>
         ))}
       </div>

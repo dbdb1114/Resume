@@ -13,24 +13,21 @@ export function AboutSection() {
         소개
       </h2>
       <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-        문제를 정의하고 코드로 해결해 나가는 과정
-        <span
-          style={{ fontSize: "14px" }}
-          className="text-gray-500 dark:text-gray-400"
-        >
-          (특히 디버깅과 개선을 통해 사용자 경험과 완성도를 높이는 경험)
-        </span>
-        에서 강한 몰입과 성취감을 느끼며 개발을 시작했습니다. 
+        스마트 글래스 웹 솔루션 스타트업에서 React/Nuxt 프론트엔드 실무를 담당하며,{" "}
         <strong className="text-gray-900 dark:text-gray-100">
-        현재는 백엔드 직무를 중심으로 핵심 기술 역량을 쌓고 있지만,  
-          프론트엔드 영역에서도 UI 설계, 상태 관리, 사용자 흐름 구현까지 직접 경험하며
-          서비스의 최종 완성도를 책임지는 개발자
-        로 성장하고 있습니다. 
+          신규 기능의 설계–구현–매뉴얼–고객 대응까지 엔드투엔드 오너십
         </strong>
-        개인 프로젝트에서는 React 기반의 프론트엔드를 직접 구현하고,
-        다양한 AI 도구를 활용해 기획 → UI → 서버 → 배포까지 전 과정을 수행하며 
-        실제 사용자를 고려한 <strong className="text-gray-900 dark:text-gray-100">End-to-End</strong> 제품 개발 경험
-        을 지속적으로 쌓고 있습니다.
+        을 갖고 일하고 있습니다.{" "}
+        동시에 레거시 구조 개선·빌드 안정화·보안 취약점 조치처럼{" "}
+        <strong className="text-gray-900 dark:text-gray-100">
+          제품을 오래 운영하는 데 필요한 일
+        </strong>
+        을 맡으며, 제가 가장 몰입하는 지점이 제품을 지속적으로 개선하는 순간임을 확인했습니다.{" "}
+        SI 백엔드(Spring Boot)에서 출발해 프론트엔드 실무를 더한 풀스택 기반으로, 이제는{" "}
+        <strong className="text-gray-900 dark:text-gray-100">
+          하나의 제품을 길게 성장시키는 조직
+        </strong>
+        에서 이 경험을 쓰고자 합니다.
       </p>
     </motion.section>
   );

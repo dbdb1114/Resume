@@ -8,19 +8,19 @@ interface SkillCategory {
 const skillCategories: SkillCategory[] = [
   {
     category: '프론트엔드',
-    skills: ['Next','React', 'Markup','Recoil', 'Tailwind CSS', 'React Query']
+    skills: ['React', 'Nuxt', 'Vue', 'Redux Toolkit', 'styled-components', 'HTML/CSS']
   },
   {
     category: '백엔드',
-    skills: ['Spring Boot', 'Spring Web Flux', 'PostgresSQL', 'MySQL', 'Redis']
+    skills: ['Spring Boot', 'Spring WebFlux', 'PostgreSQL', 'MySQL', 'Redis']
   },
   {
     category: '도구 & 기타',
-    skills: ['Git', 'Docker', 'nGrinder', 'Scouter']
+    skills: ['Git', 'Docker', 'Jenkins', 'AWS', 'nGrinder', 'Scouter']
   },
   {
     category: '언어',
-    skills: ['Java', 'Javascript', 'SQL']
+    skills: ['Java', 'JavaScript', 'SQL']
   }
 ];
 

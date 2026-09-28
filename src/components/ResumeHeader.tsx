@@ -1,7 +1,9 @@
 import { Mail, Github, Phone, MapPin, ExternalLink } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import resume from '../data/resume.json';
 
 export function ResumeHeader() {
+  const { basics } = resume;
   return (
     <div id="ResumeHeaderContainer" className=" bg-gray-800 dark:bg-gray-875 text-white p-10 border-b-4 border-gray-800 dark:border-gray-700">
       <div className="flex flex-row gap-6 items-center">
@@ -16,30 +18,30 @@ export function ResumeHeader() {
         
         {/* Name and Title */}
         <div className="flex-1">
-          <h1 className="text-3xl mb-2 tracking-wide">유정현</h1>
-          <p className="text-lg text-gray-300 mb-6">웹 개발자</p>
+          <h1 className="text-3xl mb-2 tracking-wide">{basics.name}</h1>
+          <p className="text-lg text-gray-300 mb-6">{basics.title}</p>
           
           {/* Contact Info */}
           <div id='header-info' className="flex flex-wrap gap-4 text-sm text-gray-300">
-            <a href="mailto:example@email.com" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href={`mailto:${basics.email}`} className="flex items-center gap-2 hover:text-white transition-colors">
               <Mail size={16} />
-              dbdb1114@naver.com
+              {basics.email}
             </a>
-            <a href="https://github.com/dbdb1114" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href={basics.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
               <Github size={16} />
               GitHub
             </a>
-            <a href="https://dbdb1114.github.io/portpolio" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
+            <a href={basics.portfolio} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-white transition-colors">
               <ExternalLink size={16} />
               Portfolio
             </a>
             <div className="flex items-center gap-2">
               <MapPin size={16} />
-              경기도 성남시 중원구 하대원동, 대한민국
+              {basics.location}
             </div>
-             <a href="tel:010-1234-5678" className="flex items-center gap-2 hover:text-white transition-colors">
+             <a href={`tel:${basics.phone}`} className="flex items-center gap-2 hover:text-white transition-colors">
               <Phone size={16} />
-              010-5421-5350
+              {basics.phone}
             </a>
           </div>
         </div>

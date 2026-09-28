@@ -70,10 +70,10 @@ export default function App() {
           
           <div className="p-10 space-y-10">
             <AboutSection />
-            <SkillsSection />
-            <EducationSection />
             <ExperienceSection />
             <ProjectsSection />
+            <SkillsSection />
+            <EducationSection />
             {/* <ContactSection /> */}
           </div>
         </motion.div>

@@ -1,28 +1,12 @@
 import { motion } from 'motion/react';
+import resume from '../data/resume.json';
 
 interface SkillCategory {
   category: string;
   skills: string[];
 }
 
-const skillCategories: SkillCategory[] = [
-  {
-    category: '프론트엔드',
-    skills: ['React', 'Nuxt', 'Vue', 'Redux Toolkit', 'styled-components', 'HTML/CSS']
-  },
-  {
-    category: '백엔드',
-    skills: ['Spring Boot', 'Spring WebFlux', 'PostgreSQL', 'MySQL', 'Redis']
-  },
-  {
-    category: '도구 & 기타',
-    skills: ['Git', 'Docker', 'Jenkins', 'AWS', 'nGrinder', 'Scouter']
-  },
-  {
-    category: '언어',
-    skills: ['Java', 'JavaScript', 'SQL']
-  }
-];
+const skillCategories: SkillCategory[] = resume.skills;
 
 export function SkillsSection() {
   return (

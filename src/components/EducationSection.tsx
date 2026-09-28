@@ -1,11 +1,13 @@
-import { GraduationCap, Award } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
+import resume from '../data/resume.json';
 
 interface Course {
   name: string;
   period: string;
   description: string[];
   tech: string[];
+  link?: string;
 }
 
 interface Certification {
@@ -22,56 +24,11 @@ interface Degree {
   status?: string;
 }
 
-const education: Degree[] = [
-  {
-    school: '학점은행제',
-    major: '컴퓨터공학과',
-    degree: '학사',
-    period: '2027.02',
-    status: '취득 예정'
-  }
-];
+const education: Degree[] = resume.education.degrees;
 
-const courses: Course[] = [
-  {
-    name: 'Redis 심화 활용 교육',
-    period: '2025.02 - 2025.05',
-    description: [
-      'Redisson 분산락 기반 동시성 제어',
-      'Lua Script 기반 원자적 연산 설계 — 분산락 대비 동시성 처리 전략 비교·적용',
-      '영화 예매 시스템 구축 프로젝트 수행'
-    ],
-    tech: ['Spring Boot', 'Redis', 'Java']
-  },
-  {
-    name: '항해99 취업 리부트',
-    period: '2024.02 - 2024.05',
-    description: [
-      'Spring Cloud 기반 MSA 아키텍처 설계',
-      'Redisson 분산락 기반 동시성 처리',
-      '한정판매(선착순 이커머스) 시스템 구축 프로젝트 수행'
-    ],
-    tech: ['Spring Boot', 'Spring WebFlux', 'Spring Cloud', 'JPA', 'Redis']
-  }
-];
+const courses: Course[] = resume.education.courses;
 
-const certifications: Certification[] = [
-  {
-    name: 'AWS Certified Solutions Architect – Associate (SAA-C03)',
-    issuer: 'Amazon Web Services',
-    date: '2026.06'
-  },
-  {
-    name: 'SQL 개발자 (SQLD)',
-    issuer: '한국데이터산업진흥원',
-    date: '2026.03'
-  },
-  {
-    name: '정보처리기사',
-    issuer: '한국산업인력공단',
-    date: '2025.12'
-  }
-];
+const certifications: Certification[] = resume.education.certifications;
 
 
 export function EducationSection() {
@@ -150,6 +107,18 @@ export function EducationSection() {
                     </motion.span>
                   ))}
                 </div>
+
+                {course.link && (
+                  <a
+                    href={course.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 mt-2 text-sm text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    <ExternalLink size={14} />
+                    상세 기록 보기
+                  </a>
+                )}
               </motion.div>
             ))}
           </div>

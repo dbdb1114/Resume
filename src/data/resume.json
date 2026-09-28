@@ -32,7 +32,6 @@
       "company": "주식회사 와트",
       "position": "웹 개발자",
       "period": "2026.01 - 재직 중 (계약직)",
-      "summary": "스마트 글래스 웹 솔루션 프론트엔드(React/Nuxt) · 사내 안전관리 솔루션 백엔드(Spring Boot/JPA, 2026.09~)",
       "groups": [
         {
           "items": [
@@ -92,8 +91,7 @@
         {
           "items": [
             "FEMS 공장 데이터 시각화 웹 시스템 외주 개발 (2인 팀, 백엔드 전담·화면 80%)",
-            "MySQL 데이터 모델 설계, 요구사항 정리·개발 일정/범위 조율 참여",
-            "DB 통계 쿼리 튜닝으로 조회 성능 30초 → 5초 개선"
+            "MySQL 데이터 모델 설계, 요구사항 정리·개발 일정/범위 조율 참여"
           ]
         }
       ]
@@ -266,17 +264,6 @@
           "영화 예매 시스템 구축 프로젝트 수행"
         ],
         "tech": ["Spring Boot", "Redis", "Java"]
-      },
-      {
-        "name": "항해99 취업 리부트",
-        "period": "2024.02 - 2024.05",
-        "description": [
-          "한정판매(선착순) 시스템 — Monolithic → MSA 전환, Spring Cloud Config 중앙화·Spring Cloud Bus로 설정 반영 자동화",
-          "재고 API 동시 요청 시 NPE를 병렬 테스트로 동시성 이슈로 특정, Redisson 분산락 적용 후 부하 테스트에서 재현되지 않음",
-          "상품 조회 Redis 캐시 도입 — 최대 6초 지연 → 평균 700ms, TPS 155.7 → 423 (nGrinder)"
-        ],
-        "tech": ["Spring Boot", "Spring WebFlux", "Spring Cloud", "JPA", "Redis", "nGrinder"],
-        "link": "https://azure-attention-c2e.notion.site/8c199ca32cb642618dd33a2cf20ff5f7?pvs=4"
       }
     ],
     "certifications": [
